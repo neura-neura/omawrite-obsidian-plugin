@@ -1,0 +1,9 @@
+{
+	"id": "omawrite-mode",
+	"name": "Omawrite Mode",
+	"version": "0.1.0",
+	"minAppVersion": "1.5.0",
+	"description": "Bring the minimal Omawrite writing surface to the active note.",
+	"author": "neura-neura",
+	"isDesktopOnly": true
+}

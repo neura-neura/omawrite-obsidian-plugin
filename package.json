@@ -1,0 +1,17 @@
+{
+	"name": "omawrite-mode",
+	"version": "0.1.0",
+	"description": "An Obsidian plugin that brings the Omawrite writing surface to individual notes.",
+	"author": "neura-neura",
+	"private": true,
+	"scripts": {
+		"build": "node esbuild.config.mjs production",
+		"dev": "node esbuild.config.mjs"
+	},
+	"devDependencies": {
+		"@types/node": "^22.13.4",
+		"esbuild": "^0.28.2",
+		"obsidian": "^1.13.1",
+		"typescript": "^5.9.2"
+	}
+}
