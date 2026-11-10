@@ -247,9 +247,6 @@
 	margin: 0 auto;
 }
 
-/* Obsidian's "Readable line length" caps .cm-sizer, .cm-content and .cm-line
-   at --file-line-width (700px) with higher specificity; lift that cap so the
-   Omawrite line width setting is the only limit. */
 .omawrite-mode .markdown-source-view.is-readable-line-width .cm-content,
 .omawrite-mode .markdown-source-view.is-readable-line-width .cm-line {
 	max-width: none !important;
@@ -568,10 +565,6 @@ body.omawrite-distraction-free .workspace-tab-header-spacer {
 	display: none !important;
 }
 
-/* The hidden titlebar and tab header were the window's drag handles. Keep an
-   invisible strip along the top edge so the window can still be moved. It
-   stops short of the right corner so the exit button's hover zone still
-   receives mouse events (drag regions swallow them). */
 body.omawrite-distraction-free:not(.is-mobile)::before {
 	content: "";
 	position: fixed;
