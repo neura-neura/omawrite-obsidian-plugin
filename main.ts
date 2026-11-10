@@ -190,7 +190,7 @@ export default class OmawritePlugin extends Plugin {
 			fontSize: this.clampNumber(stored?.fontSize, 14, 32, DEFAULT_SETTINGS.fontSize),
 			lineWidth: migrateLegacyWidth
 				? DEFAULT_SETTINGS.lineWidth
-				: this.clampNumber(stored?.lineWidth, 45, 100, DEFAULT_SETTINGS.lineWidth),
+				: this.clampNumber(stored?.lineWidth, 45, 150, DEFAULT_SETTINGS.lineWidth),
 			topSpacing: this.clampNumber(stored?.topSpacing, 0, 15, DEFAULT_SETTINGS.topSpacing),
 			textAlignment: this.normalizeTextAlignment(stored?.textAlignment),
 			backgroundImagePath:
@@ -996,7 +996,7 @@ class OmawriteSettingTab extends PluginSettingTab {
 			.setDesc(this.plugin.translations.lineWidthDescription)
 			.addSlider((slider) => {
 				slider
-					.setLimits(45, 100, 1)
+					.setLimits(45, 150, 1)
 					.setValue(this.plugin.settings.lineWidth)
 					.setDynamicTooltip()
 					.onChange((value) => {
@@ -1181,7 +1181,7 @@ class OmawriteSettingTab extends PluginSettingTab {
 		);
 		this.previewContainerEl.style.setProperty(
 			"--omawrite-preview-line-width",
-			`${Math.min(100, Math.max(45, lineWidth))}%`,
+			`${(Math.min(150, Math.max(45, lineWidth)) / 150) * 100}%`,
 		);
 		this.previewContainerEl.style.setProperty(
 			"--omawrite-preview-top-spacing",
