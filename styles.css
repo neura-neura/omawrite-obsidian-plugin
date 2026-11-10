@@ -243,8 +243,13 @@
 
 .omawrite-mode .markdown-source-view .cm-sizer {
 	width: min(var(--omawrite-column-percent), var(--omawrite-line-width));
-	max-width: 100%;
+	max-width: 100% !important;
 	margin: 0 auto;
+}
+
+.omawrite-mode .markdown-source-view.is-readable-line-width .cm-content,
+.omawrite-mode .markdown-source-view.is-readable-line-width .cm-line {
+	max-width: none !important;
 }
 
 .omawrite-mode .markdown-source-view .cm-content {
@@ -558,6 +563,21 @@ body.omawrite-distraction-free .workspace-tab-header-new-tab,
 body.omawrite-distraction-free .workspace-tab-header-tab-list,
 body.omawrite-distraction-free .workspace-tab-header-spacer {
 	display: none !important;
+}
+
+body.omawrite-distraction-free:not(.is-mobile)::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 70px;
+	height: 28px;
+	z-index: 9999;
+	-webkit-app-region: drag;
+}
+
+body.omawrite-distraction-free .omawrite-exit-button {
+	-webkit-app-region: no-drag;
 }
 
 body.omawrite-distraction-free .workspace,
